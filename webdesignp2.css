@@ -1,0 +1,75 @@
+.layout-container {
+    max-width: 970px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.headingLevel2.of-primary {
+    position: relative;
+    padding: 0 0 0 6px;
+    border-left: solid 3px #e60012;
+}
+
+.utility-textAlign-right {
+    text-align: right;
+}
+
+.utility-text-small {
+    font-size: 16px;
+}
+
+.form-necessaryText {
+    margin: 0 0 8px;
+    font-weight: bold;
+    color: #f00;
+}
+
+.form-groupTitle{
+    margin: 50px;
+    font-weight: bold;
+}
+
+.form-input {
+    margin: 20px;
+}
+.card {
+    margin: 0 0 32px;
+    padding: 16px;
+    border: 0px outset red;
+  background-color: lightblue;  
+}
+
+
+.form-necessityIcon {
+    color: red;
+}
+.form-checkbox {
+    margin-left:  35px;  
+}
+
+.button {
+  background-color: #f44336; 
+  border: none;
+  color: white;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+   margin-left:  220px;
+}
+
+.errorMsgc{
+    color: #f44336;
+    margin-left:  220px;
+     font-weight: bold;
+}
+
+.passMsgc{
+    color: #f44336;
+    margin-left:  220px;
+     font-weight: bold;
+}
