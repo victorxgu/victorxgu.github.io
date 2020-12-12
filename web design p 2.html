@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<style>
+		img {
+			  filter: opacity(60%);
+			filter: grayscale(20%);
+			filter: brightness(100%);
+			}
+		h1 { color: #e60000; }
+		body {
+		  background-color: #f2f2f2;
+		  font-family: 'Open Sans',sans-serif;
+		}
+		
+		{
+  		background-image: url("network.jpg");
+  		width= 100%;
+		height= "600"
+		background-attachment: fixed;
+	}
+
+		.hero-image{
+			background: url("network.jpg");
+			  background-repeat: no-repeat;
+			  background-size:100% ;
+			  height: 300px;
+			  position: relative;
+		}
+		.hero-text {
+	  		text-align: left;
+		  position: absolute;
+		  top: 60%;
+  			left: 18%;
+		  transform: translate(-50%, -50%);
+		  color: #e60012;
+	}
+		</style>
+        <title>CSS Playground</title>
+    <link rel="stylesheet" type="text/css" href="webdesignp2.css">
+	</head>
+    <body>
+
+    
+   
+	<div class="hero-image">
+		<div class="hero-text">
+		<h1 style="font-size:50px">Contact Us</h1>
+		</div>
+	</div>
+	<h2 class="headingLevel2 of-primary">User Registration</h2>
+	<span id="suz_registerTopGuide">                       </span>
+	<p class="form-necessaryText utility-textAlign-right utility-text-small">* is required information.</p>
+	
+	<div class="card">
+		
+		  
+		<div class="form-group suz_rr  js-preInput" id="suz_div_firstName">
+		  <label for="firstName" class="form-groupTitle">First Name <span class="form-necessityIcon">*</span></label>
+		  <p class="errorMsg" id="ferror"  style="display:none;" style="color:red">This field is required.</p>
+			
+			<input type="text" name="firstName" maxlength="150" id="firstName" value="" class="form-input utility-width-120" style="margin-left:18px"/>
+
+		</div>
+		<br>
+
+		<div class="form-group suz_rr  js-preInput" id="suz_div_lastName">
+		  <label for="suz_lastName" class="form-groupTitle">Last Name <span class="form-necessityIcon of-required">*</span></label>
+			<p class="errorMsg" style="display:none;">This field is required.</p>
+			
+
+			 <input type="text" name="lastName" maxlength="256"  id="lastName" value="" class="form-input utility-width-100"/>
+		</div>
+		<br>
+		  
+		  <div class="form-group suz_rr  js-preInput" id="suz_div_emailAddress">
+
+			<label for="suz_emailAddress" class="form-groupTitle">Business E-mail Address <span class="form-necessityIcon of-required">*</span></label>
+			<p class="errorMsg" style="display:none;">This field is required.</p>
+			
+
+			<input type="email" name="emailAddress" maxlength="260"  id="emailAddress" value="" class="form-input utility-width-100" style="margin-left:3px"/>
+		  
+		  </div>
+		  <br>
+
+		  <div class="form-group suz_rr  js-preInput" id="suz_div_productNo">
+
+			<label for="productNo" class="form-groupTitle" id="psn" >Product Serial Number <span class="form-necessityIcon of-required">*</span></label>
+			<p class="errorMsg" style="display:none;">This field is required.</p>
+			
+
+			<input type="number" name="productNo" maxlength="128"  id="productNo" value="" class="form-input utility-width-100"  />
+		  
+		  </div>
+		  
+		  <br>
+		  
+
+		  <div class="form-group suz_rr  js-preInput" id="suz_div_newsLetter">
+
+			<label for="suz_newsLetter" class="form-groupTitle">Newsletter </label>
+			<p class="form-necessaryText suz_errorMsg" style="display:none;"></p>
+			
+			<label for="checknewsLetter">
+			 <input type="checkbox" name="newsLetter" value="on" class="form-checkbox" id="checknewsLetter"><span class="form-checkboxText">YES! Email with the latest product news, tips, and application guides.</span>
+			 </label>
+
+			 </div>
+
+
+			 <br><br>
+
+		  <button id="checkall" class="button"> Continue</button>
+		 <p class="errorMsgc" id="berror" style="display:none;">Please input completely!</p>
+		 <p class="passMsgc" id="bpass" style="display:none;">Download is beginning!</p>
+</div>
+<script>
+       //var username=prompt("Enter your username")
+       //logIn(username);
+      var product1=document.querySelector("#psn");
+       product1.addEventListener("mouseover", changeText1);
+       product1.addEventListener("mouseout", changeText1Back);
+
+       var inputf=document.querySelector("#firstName");
+       
+       inputf.addEventListener("mouseout", checkfname);
+		//inputf.addEventListener("input",doThisWhenClicked);
+       
+       var inputl=document.querySelector("#lastName");
+
+        inputl.addEventListener("mouseout", checklname);
+        //inputl.addEventListener("click",checklastname);
+       
+
+       var emailAddress=document.querySelector("#emailAddress");
+        emailAddress.addEventListener("mouseout", checkem);
+        //emailAddress.addEventListener("click", checkemail);
+
+        var productNo=document.querySelector("#productNo");
+        productNo.addEventListener("mouseout", checkNo);
+        
+        
+        //var checkbox=document.querySelector("#checknewsLetter");
+        //checkbox.addEventListener("click", store );
+
+
+        var button=document.querySelector("#checkall");
+        button.addEventListener("click", checkall);
+        button.addEventListener("mouseout", nodisplay);
+       
+       //function definitions
+
+      // function changeText(){
+        //this.textContent ="You clicked " + this.id;
+
+        //}
+       
+        //function changeColor(){
+          //head1.style.backgroundColor="blue";
+        //}
+
+        //function changeColorBack(){
+          //head1.style.backgroundColor="white";
+        //}
+       function changeText1(){
+               product1.textContent="Please go to product page and get serial number first.";
+            }
+
+          function changeText1Back(){
+               product1.textContent="Product Serial Number *";
+            } 
+
+
+          function checkfname(){
+               //var fn = document.getElementById("firstName").value;
+               var x=inputf.value.trim()
+               if (x == "" || x == null || typeof x == "number")
+      { 
+         //document.getElementById("ferror").style.display = "block";  	
+         alert("Please input a First Name");
+         return false;	
+      }  	
+      			else{
+					 var letters = /^[a-zA-Z]+$/;
+					if(inputf.value.match(letters))
+					{
+					//alert('Your registration number have accepted : you can try another');
+					//document.form1.text1.focus();
+					return true;
+					}
+					else
+					{
+					alert("Please input First Name correctly");
+					
+					}		
+      			}
+            } 
+
+          function checklname(){
+               //var fn = document.getElementById("firstName").value;
+               var y=inputl.value.trim()
+               if (y == "" || y == null)
+      		{ 
+         alert("Please input a Last Name");  	
+            }
+         		else{
+					 var letters = /^[a-zA-Z]+$/;
+					if(inputl.value.match(letters))
+					{
+     				return true;
+					}
+					else
+					{
+					alert("Please input Last Name correctly");
+					
+					}	
+      			  	
+           		 } 
+       	 } 
+
+       		function checkem(){
+               //var fn = document.getElementById("firstName").value;
+               var em=emailAddress.value.trim()
+               if (em == "" || em == null)
+      { 
+         alert("Please input an Email Address");  	
+         
+         	
+      }  	
+      		  else {
+
+				var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				if(emailAddress.value.match(mailformat))
+				{
+				
+				//document.form1.text1.focus();
+				return true;
+				}
+				else
+				{
+				alert("You have entered an invalid email address!");
+				//document.form1.text1.focus();
+				return false;
+				
+				}
+      		  }
+            } 
+
+            //function ValidateEmail(inputText)
+
+
+            function checkNo(){
+               //var fn = document.getElementById("firstName").value;
+               var pn=productNo.value.trim()
+               if (pn == "" || pn == null)
+      { 
+         alert("Please input an Product Serial Number");  	
+         
+         	
+      }  	
+      			else{
+      				var numbers = /^[0-9]+$/;
+      				if(productNo.value.match(numbers))
+      					{
+					      
+					      return true;
+					      }
+					      else
+					      {
+					      //alert('Please input Product Serial Number correctly');
+					     // document.form1.text1.focus();
+					      return false;
+					      }
+      			}
+            } 
+
+        function checkall(){
+		        var x=inputf.value.trim()
+		        var y=inputl.value.trim()
+		        var em=emailAddress.value.trim()
+		        var pn=productNo.value.trim()
+
+		        if (x == "" ||x == null ||y == ""|| y == null ||em == ""|| em == null ||pn == "" ||pn == null){ 
+      
+         document.getElementById("berror").style.display = "block";  	
+         
+         	
+		       
+		        }
+		         else{
+		         	document.getElementById("bpass").style.display = "block";
+		         }
+		  }
+        
+		  function nodisplay(){
+		  	document.getElementById("berror").style.display = "none";
+		  }
+    	
+    	function checkemail()
+    	{
+		 var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if(inputText.value.match(mailformat))
+{
+alert("Valid email address!");
+document.form1.text1.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.form1.text1.focus();
+return false;
+}
+		}
+
+		
+       function checklastname(){
+       
+        if(inputl.value==text){
+             alert("Login successful");
+        }
+        else{
+                           alert("Wrong Lastname");
+        }
+    }
+
+    	function checklastname(){
+       
+        if(inputl.value==text){
+             alert("Login successful");
+        }
+        else{
+                           alert("Wrong Lastname");
+        }
+    }
+     </script>
+	</body>
+</html>
